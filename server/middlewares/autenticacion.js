@@ -15,12 +15,12 @@ let verificarToken = (req, res, next) => {
                 err: {
                     message: 'Token no valido'
                 }
-            })
+            });
         }
+        req.usuario = decoded.usuario;
+        next();
     })
 
-    req.usuario = decoded.usuario;
-    next();
 };
 
 
